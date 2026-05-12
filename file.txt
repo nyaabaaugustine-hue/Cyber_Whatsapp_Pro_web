@@ -1,0 +1,10 @@
+# Create .gitignore
+echo "node_modules/" > .gitignore
+
+# Remove node_modules from Git tracking (if already tracked)
+git rm -r --cached node_modules/
+
+# Now add and commit
+git add .
+git commit -m "Add .gitignore and update project"
+git push origin main
