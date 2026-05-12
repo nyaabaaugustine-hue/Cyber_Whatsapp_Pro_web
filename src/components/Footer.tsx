@@ -1,7 +1,7 @@
-import { Mail, Phone, MessageCircle } from "lucide-react"
+import { Mail, Phone, MessageCircle } from "lucide-react";
 
 export default function Footer() {
-  const phoneNumber = "233541988383"
+  const phoneNumber = "233541988383";
 
   return (
     <footer className="bg-slate-900 text-white py-12">
@@ -9,9 +9,9 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Brand */}
           <div>
-            <img 
-              src="https://res.cloudinary.com/dwsl2ktt2/image/upload/v1778439347/cybbber_xhblm2.png" 
-              alt="Cyber WhatsApp Pro" 
+            <img
+              src="https://res.cloudinary.com/dwsl2ktt2/image/upload/v1778439347/cybbber_xhblm2.png"
+              alt="Cyber WhatsApp Pro"
               className="h-10 mb-4"
             />
             <p className="text-slate-400 text-sm">
@@ -24,7 +24,7 @@ export default function Footer() {
             <h3 className="font-semibold text-lg mb-4">Quick Links</h3>
             <ul className="space-y-2">
               <li>
-                <a href="#steps" className="text-slate-400 hover:text-emerald-400 transition-colors">
+                <a href="#instructions" className="text-slate-400 hover:text-emerald-400 transition-colors">
                   Installation Guide
                 </a>
               </li>
@@ -38,6 +38,11 @@ export default function Footer() {
                   Pricing
                 </a>
               </li>
+              <li>
+                <a href="#support" className="text-slate-400 hover:text-emerald-400 transition-colors">
+                  Support
+                </a>
+              </li>
             </ul>
           </div>
 
@@ -46,8 +51,8 @@ export default function Footer() {
             <h3 className="font-semibold text-lg mb-4">Contact Us</h3>
             <ul className="space-y-3">
               <li>
-                <a 
-                  href="tel:+233541988383" 
+                <a
+                  href="tel:+233541988383"
                   className="flex items-center gap-3 text-slate-400 hover:text-emerald-400 transition-colors"
                 >
                   <Phone className="w-4 h-4" />
@@ -55,7 +60,7 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a 
+                <a
                   href={`https://wa.me/${phoneNumber}`}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -66,8 +71,8 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a 
-                  href="mailto:cybertechgh@gmail.com" 
+                <a
+                  href="mailto:cybertechgh@gmail.com"
                   className="flex items-center gap-3 text-slate-400 hover:text-emerald-400 transition-colors"
                 >
                   <Mail className="w-4 h-4" />
@@ -84,12 +89,10 @@ export default function Footer() {
             <p className="text-slate-500 text-sm">
               © {new Date().getFullYear()} Cyber WhatsApp Pro. All rights reserved.
             </p>
-            <p className="text-slate-500 text-sm">
-              Made with ❤️ in Ghana
-            </p>
+            <p className="text-slate-500 text-sm">Made with ❤️ in Ghana</p>
           </div>
         </div>
       </div>
     </footer>
-  )
+  );
 }

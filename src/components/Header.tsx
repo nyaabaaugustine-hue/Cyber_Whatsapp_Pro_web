@@ -1,89 +1,111 @@
-import { Menu, X } from 'lucide-react'
-import { useState } from 'react'
+import { useState, useEffect } from "react";
+import { Menu, X } from "lucide-react";
 
-export default function Header() {
-  const [isOpen, setIsOpen] = useState(false)
+export function Header() {
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  const scrollTo = (id: string) => {
-    const element = document.getElementById(id)
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' })
-    }
-    setIsOpen(false)
-  }
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const navLinks = [
+    { href: "#pricing", label: "Pricing" },
+    { href: "#instructions", label: "Installation" },
+    { href: "#video", label: "Video Guide" },
+    { href: "#support", label: "Support" },
+  ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-100">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          <div className="flex items-center gap-3">
-            <img 
-              src="https://res.cloudinary.com/dwsl2ktt2/image/upload/v1778439347/cybbber_xhblm2.png" 
-              alt="Cyber WhatsApp Pro Logo" 
-              className="w-10 h-10 object-contain"
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isScrolled
+          ? "bg-white/95 backdrop-blur-md shadow-lg shadow-slate-100"
+          : "bg-transparent"
+      }`}
+    >
+      <div className="max-w-6xl mx-auto px-4">
+        <div className="flex items-center justify-between h-20">
+          {/* Logo */}
+          <a href="#" className="flex items-center gap-3 group">
+            <img
+              src="https://res.cloudinary.com/dwsl2ktt2/image/upload/v1778439347/cybbber_xhblm2.png"
+              alt="Cyber WhatsApp Pro Logo"
+              className="h-12 w-auto transition-transform duration-300 group-hover:scale-105"
             />
-            <span className="font-bold text-lg text-slate-900">Cyber WhatsApp Pro</span>
-          </div>
+            <div className="hidden sm:block">
+              <span className={`font-bold text-lg transition-colors duration-300 ${
+                isScrolled ? "text-slate-900" : "text-slate-800"
+              }`}>
+                Cyber WhatsApp Pro
+              </span>
+              <p className="text-xs text-slate-500 -mt-0.5">Bulk Automation Tool</p>
+            </div>
+          </a>
 
-          {/* Desktop Nav */}
+          {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-8">
-            <button onClick={() => scrollTo('steps')} className="text-slate-600 hover:text-slate-900 transition-colors">
-              Installation
-            </button>
-            <button onClick={() => scrollTo('video')} className="text-slate-600 hover:text-slate-900 transition-colors">
-              Video Guide
-            </button>
-            <button onClick={() => scrollTo('pricing')} className="text-slate-600 hover:text-slate-900 transition-colors">
-              Pricing
-            </button>
-            <button onClick={() => scrollTo('support')} className="text-slate-600 hover:text-slate-900 transition-colors">
-              Support
-            </button>
+            {navLinks.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                className={`text-sm font-medium transition-colors duration-300 hover:text-emerald-600 ${
+                  isScrolled ? "text-slate-600" : "text-slate-700"
+                }`}
+              >
+                {link.label}
+              </a>
+            ))}
             <a
-              href="/downloads/cyber-whatsapp-pro.zip"
-              download
-              className="bg-emerald-600 hover:bg-emerald-700 text-white px-5 py-2.5 rounded-lg font-medium transition-colors"
+              href="#pricing"
+              className="bg-gradient-to-r from-emerald-600 to-cyan-600 hover:from-emerald-700 hover:to-cyan-700 text-white px-5 py-2.5 rounded-xl text-sm font-semibold shadow-lg shadow-emerald-200 hover:shadow-xl hover:shadow-emerald-300 transition-all duration-300"
             >
-              Download
+              Get Started
             </a>
           </nav>
 
           {/* Mobile Menu Button */}
           <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2 text-slate-600"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className={`md:hidden p-2 rounded-lg transition-colors duration-300 ${
+              isScrolled ? "text-slate-700 hover:bg-slate-100" : "text-slate-800 hover:bg-white/50"
+            }`}
           >
-            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
 
-        {/* Mobile Nav */}
-        {isOpen && (
-          <nav className="md:hidden py-4 border-t border-slate-100">
-            <div className="flex flex-col gap-4">
-              <button onClick={() => scrollTo('steps')} className="text-slate-600 hover:text-slate-900 transition-colors text-left">
-                Installation
-              </button>
-              <button onClick={() => scrollTo('video')} className="text-slate-600 hover:text-slate-900 transition-colors text-left">
-                Video Guide
-              </button>
-              <button onClick={() => scrollTo('pricing')} className="text-slate-600 hover:text-slate-900 transition-colors text-left">
-                Pricing
-              </button>
-              <button onClick={() => scrollTo('support')} className="text-slate-600 hover:text-slate-900 transition-colors text-left">
-                Support
-              </button>
+        {/* Mobile Navigation */}
+        <div
+          className={`md:hidden overflow-hidden transition-all duration-300 ${
+            isMobileMenuOpen ? "max-h-96 pb-6" : "max-h-0"
+          }`}
+        >
+          <nav className="flex flex-col gap-4 pt-4 border-t border-slate-200">
+            {navLinks.map((link) => (
               <a
-                href="/downloads/cyber-whatsapp-pro.zip"
-                download
-                className="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2 rounded-lg font-medium transition-colors text-center"
+                key={link.href}
+                href={link.href}
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="text-slate-600 hover:text-emerald-600 font-medium transition-colors duration-300"
               >
-                Download
+                {link.label}
               </a>
-            </div>
+            ))}
+            <a
+              href="#pricing"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="bg-gradient-to-r from-emerald-600 to-cyan-600 text-white px-5 py-3 rounded-xl text-sm font-semibold text-center shadow-lg shadow-emerald-200"
+            >
+              Get Started
+            </a>
           </nav>
-        )}
+        </div>
       </div>
     </header>
-  )
+  );
 }
