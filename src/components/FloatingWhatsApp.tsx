@@ -12,8 +12,11 @@ export function FloatingWhatsApp() {
 
   return (
     <div className="fixed bottom-6 right-6 z-50">
-      {/* Expanded Panel */}
-      <div className={`absolute bottom-20 right-0 w-80 transition-all duration-300 ${isOpen ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 translate-y-4 pointer-events-none"}`}>
+      {/* Expanded Panel - positioned relative to viewport */}
+      <div className={`fixed bottom-24 z-50 transition-all duration-300
+                      ${isOpen ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 translate-y-4 pointer-events-none"}
+                      left-4 right-4 mx-auto max-w-xs
+                      sm:left-auto sm:right-6 sm:mx-0`}>
         <div className="bg-white rounded-2xl shadow-2xl border border-slate-100 overflow-hidden">
           {/* Image Header */}
           <div className="relative h-40 overflow-hidden">

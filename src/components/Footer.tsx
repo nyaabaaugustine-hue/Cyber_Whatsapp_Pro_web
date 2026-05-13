@@ -31,6 +31,7 @@ export default function Footer() {
               <li>
                 <a href="#video" className="text-slate-400 hover:text-emerald-400 transition-colors">
                   Video Tutorial
+                  Video Guides
                 </a>
               </li>
               <li>
@@ -89,7 +90,7 @@ export default function Footer() {
             <p className="text-slate-500 text-sm">
               © {new Date().getFullYear()} Cyber WhatsApp Pro. All rights reserved.
             </p>
-            <p className="text-slate-500 text-sm">Made with ❤️ in Ghana</p>
+            <p className="text-slate-500 text-sm">❤️</p>
           </div>
         </div>
       </div>
