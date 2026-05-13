@@ -14,7 +14,7 @@ export default function Footer() {
               alt="Cyber WhatsApp Pro"
               className="h-10 mb-4"
             />
-            <p className="text-slate-400 text-sm">
+            <p className="text-slate-400 text-sm leading-relaxed">
               Bulk WhatsApp automation tool for Chrome. Save time and boost productivity.
             </p>
           </div>
@@ -23,30 +23,27 @@ export default function Footer() {
           <div>
             <h3 className="font-semibold text-lg mb-4">Quick Links</h3>
             <ul className="space-y-2">
-              <li>
-                <a href="#instructions" className="text-slate-400 hover:text-emerald-400 transition-colors">
-                  Installation Guide
-                </a>
-              </li>
-              <li>
-                <a href="#video" className="text-slate-400 hover:text-emerald-400 transition-colors">
-                  Video Guides
-                </a>
-              </li>
-              <li>
-                <a href="#pricing" className="text-slate-400 hover:text-emerald-400 transition-colors">
-                  Pricing
-                </a>
-              </li>
-              <li>
-                <a href="#support" className="text-slate-400 hover:text-emerald-400 transition-colors">
-                  Support
-                </a>
-              </li>
+              {[
+                { href: "#pricing", label: "Pricing" },
+                { href: "#instructions", label: "Installation Guide" },
+                { href: "#video", label: "Video Guides" },
+                { href: "#testimonials", label: "Reviews" },
+                { href: "#faq", label: "FAQ" },
+                { href: "#support", label: "Support" },
+              ].map((link) => (
+                <li key={link.href}>
+                  <a
+                    href={link.href}
+                    className="text-slate-400 hover:text-emerald-400 transition-colors text-sm"
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
 
-          {/* Contact Us */}
+          {/* Contact */}
           <div>
             <h3 className="font-semibold text-lg mb-4">Contact Us</h3>
             <ul className="space-y-3">
@@ -55,8 +52,8 @@ export default function Footer() {
                   href="tel:+233541988383"
                   className="flex items-center gap-3 text-slate-400 hover:text-emerald-400 transition-colors"
                 >
-                  <Phone className="w-4 h-4" />
-                  <span>+233 54 198 8383</span>
+                  <Phone className="w-4 h-4 flex-shrink-0" />
+                  <span className="text-sm">+233 54 198 8383</span>
                 </a>
               </li>
               <li>
@@ -66,8 +63,8 @@ export default function Footer() {
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 text-slate-400 hover:text-green-400 transition-colors"
                 >
-                  <MessageCircle className="w-4 h-4" />
-                  <span>WhatsApp Chat</span>
+                  <MessageCircle className="w-4 h-4 flex-shrink-0" />
+                  <span className="text-sm">WhatsApp Chat</span>
                 </a>
               </li>
               <li>
@@ -75,8 +72,8 @@ export default function Footer() {
                   href="mailto:cybertechgh@gmail.com"
                   className="flex items-center gap-3 text-slate-400 hover:text-emerald-400 transition-colors"
                 >
-                  <Mail className="w-4 h-4" />
-                  <span>cybertechgh@gmail.com</span>
+                  <Mail className="w-4 h-4 flex-shrink-0" />
+                  <span className="text-sm">cybertechgh@gmail.com</span>
                 </a>
               </li>
             </ul>
@@ -89,7 +86,7 @@ export default function Footer() {
             <p className="text-slate-500 text-sm">
               © {new Date().getFullYear()} Cyber WhatsApp Pro. All rights reserved.
             </p>
-            <p className="text-slate-500 text-sm">❤️</p>
+            <p className="text-slate-500 text-sm">Made with ❤️ in Ghana</p>
           </div>
         </div>
       </div>

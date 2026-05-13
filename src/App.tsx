@@ -7,6 +7,8 @@ import { VideoGuide } from "./components/VideoGuide";
 import { Support } from "./components/Support";
 import { BrowserWarning } from "./components/BrowserWarning";
 import { FloatingWhatsApp } from "./components/FloatingWhatsApp";
+import { Testimonials } from "./components/Testimonials";
+import { FAQ } from "./components/FAQ";
 import Footer from "./components/Footer";
 
 function App() {
@@ -14,38 +16,35 @@ function App() {
   const [showWarning, setShowWarning] = useState(false);
 
   useEffect(() => {
-    const isChromeBrowser = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+    const isChromeBrowser =
+      /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
     setIsChrome(isChromeBrowser);
-    if (!isChromeBrowser) {
-      setShowWarning(true);
-    }
+    if (!isChromeBrowser) setShowWarning(true);
   }, []);
 
   return (
     <div className="min-h-screen bg-slate-50">
       <BrowserWarning show={showWarning} onClose={() => setShowWarning(false)} />
 
-      {/* Header */}
       <Header />
 
       <div className="relative">
-        {/* Decorative elements */}
-        <div className="absolute top-0 left-0 w-96 h-96 bg-emerald-200 rounded-full blur-3xl opacity-30 -translate-x-1/2 -translate-y-1/2" />
-        <div className="absolute top-1/4 right-0 w-80 h-80 bg-cyan-200 rounded-full blur-3xl opacity-30 translate-x-1/2" />
+        {/* Decorative blobs */}
+        <div className="absolute top-0 left-0 w-96 h-96 bg-emerald-200 rounded-full blur-3xl opacity-30 -translate-x-1/2 -translate-y-1/2 pointer-events-none" />
+        <div className="absolute top-1/4 right-0 w-80 h-80 bg-cyan-200 rounded-full blur-3xl opacity-30 translate-x-1/2 pointer-events-none" />
 
         <main className="relative z-10">
           <Hero isChrome={isChrome} />
+          <Testimonials />
           <Pricing />
           <InstallationSteps />
           <VideoGuide />
+          <FAQ />
           <Support />
         </main>
       </div>
 
-      {/* Floating WhatsApp Button */}
       <FloatingWhatsApp />
-
-      {/* Footer */}
       <Footer />
     </div>
   );

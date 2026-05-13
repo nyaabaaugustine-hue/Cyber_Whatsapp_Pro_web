@@ -1,6 +1,6 @@
 import { Button } from "./ui/button";
 import { Card } from "./ui/card";
-import { MessageCircle, Mail, Phone, ExternalLink } from "lucide-react";
+import { MessageCircle, Mail, Phone, HelpCircle } from "lucide-react";
 
 export function Support() {
   const phoneNumber = "233541988383";
@@ -11,9 +11,7 @@ export function Support() {
       <div className="max-w-4xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
-            Need Help?
-          </h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">Need Help?</h2>
           <p className="text-lg text-slate-600 max-w-xl mx-auto">
             Our support team is ready to assist you with installation or any questions
           </p>
@@ -69,34 +67,34 @@ export function Support() {
             <Button
               variant="outline"
               className="w-full border-cyan-200 text-cyan-700 hover:bg-cyan-50"
-              onClick={() =>
-                window.open("mailto:cybertechgh@gmail.com", "_blank")
-              }
+              onClick={() => window.open("mailto:cybertechgh@gmail.com", "_blank")}
             >
               Send Email
             </Button>
           </Card>
         </div>
 
-        {/* FAQ Teaser */}
+        {/* FAQ shortcut */}
         <div className="p-6 bg-gradient-to-r from-slate-900 to-slate-800 rounded-2xl">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-4">
               <div className="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center">
-                <ExternalLink className="w-6 h-6 text-white" />
+                <HelpCircle className="w-6 h-6 text-white" />
               </div>
               <div>
-                <p className="text-white font-medium">Check our FAQ</p>
-                <p className="text-slate-400 text-sm">Find answers to common questions</p>
+                <p className="text-white font-medium">Browse our FAQ</p>
+                <p className="text-slate-400 text-sm">
+                  Quick answers to the most common questions
+                </p>
               </div>
             </div>
-            <Button
-              variant="outline"
-              className="bg-white/10 border-white/20 text-white hover:bg-white/20"
+            <a
+              href="#faq"
+              className="inline-flex items-center gap-2 bg-white/10 border border-white/20 text-white hover:bg-white/20 px-5 py-2.5 rounded-xl text-sm font-semibold transition-all duration-300"
             >
-              View Documentation
-              <ExternalLink className="w-4 h-4 ml-2" />
-            </Button>
+              <HelpCircle className="w-4 h-4" />
+              View FAQ
+            </a>
           </div>
         </div>
       </div>

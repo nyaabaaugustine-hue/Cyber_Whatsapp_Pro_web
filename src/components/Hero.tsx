@@ -94,23 +94,22 @@ export function Hero({ isChrome }: HeroProps) {
 
           {/* Right Image */}
           <div className="relative">
-            {/* Decorative background */}
             <div className="absolute inset-0 bg-gradient-to-br from-emerald-200 to-cyan-200 rounded-3xl transform rotate-3 scale-105 opacity-50" />
-
-            {/* Main Image */}
             <div className="relative">
+              {/* Optimised: w_800, q_auto, f_auto for fast load on all devices */}
               <img
-                src="https://res.cloudinary.com/dwsl2ktt2/image/upload/v1778561452/improve_marketing_ad_poster_and_202605120333_gh2j6s.jpg"
+                src="https://res.cloudinary.com/dwsl2ktt2/image/upload/w_800,q_auto,f_auto/v1778561452/improve_marketing_ad_poster_and_202605120333_gh2j6s.jpg"
                 alt="Cyber WhatsApp Pro - Marketing Dashboard"
                 className="w-full h-auto rounded-2xl shadow-2xl shadow-slate-300"
+                loading="eager"
+                decoding="async"
               />
-
-              {/* Floating Logo Badge */}
               <div className="absolute -top-4 -right-4 bg-white p-2 rounded-xl shadow-lg border border-slate-100">
                 <img
-                  src="https://res.cloudinary.com/dwsl2ktt2/image/upload/v1778439347/cybbber_xhblm2.png"
+                  src="https://res.cloudinary.com/dwsl2ktt2/image/upload/w_96,q_auto,f_auto/v1778439347/cybbber_xhblm2.png"
                   alt="Cyber WhatsApp Pro"
                   className="w-12 h-12"
+                  loading="eager"
                 />
               </div>
             </div>

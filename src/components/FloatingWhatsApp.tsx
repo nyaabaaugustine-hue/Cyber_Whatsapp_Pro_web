@@ -33,18 +33,18 @@ export function FloatingWhatsApp() {
           }`}
           style={{
             bottom: "calc(100% + 1rem)",
-            /* On mobile: pin left edge to viewport + 1rem, right edge to 0 (aligns with button) */
             right: 0,
             width: "min(320px, calc(100vw - 2rem))",
           }}
         >
           <div className="bg-white rounded-2xl shadow-2xl border border-slate-100 overflow-hidden">
-            {/* Image Header */}
+            {/* Image Header — optimised for the small 320px panel width */}
             <div className="relative h-32 sm:h-40 overflow-hidden">
               <img
-                src="https://res.cloudinary.com/dwsl2ktt2/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1778561984/download_c9fduz.jpg"
+                src="https://res.cloudinary.com/dwsl2ktt2/image/upload/w_640,ar_16:9,c_fill,g_auto,q_auto,f_auto/v1778561984/download_c9fduz.jpg"
                 alt="Cyber WhatsApp Pro"
                 className="w-full h-full object-cover"
+                loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
               <div className="absolute bottom-3 left-3 right-3">

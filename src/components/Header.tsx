@@ -17,6 +17,7 @@ export function Header() {
     { href: "#pricing", label: "Pricing" },
     { href: "#instructions", label: "Installation" },
     { href: "#video", label: "Video Guides" },
+    { href: "#faq", label: "FAQ" },
     { href: "#support", label: "Support" },
   ];
 
@@ -38,9 +39,11 @@ export function Header() {
               className="h-12 w-auto transition-transform duration-300 group-hover:scale-105"
             />
             <div className="hidden sm:block">
-              <span className={`font-bold text-lg transition-colors duration-300 ${
-                isScrolled ? "text-slate-900" : "text-slate-800"
-              }`}>
+              <span
+                className={`font-bold text-lg transition-colors duration-300 ${
+                  isScrolled ? "text-slate-900" : "text-slate-800"
+                }`}
+              >
                 Cyber WhatsApp Pro
               </span>
               <p className="text-xs text-slate-500 -mt-0.5">Bulk Automation Tool</p>
@@ -48,7 +51,7 @@ export function Header() {
           </a>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden md:flex items-center gap-6">
             {navLinks.map((link) => (
               <a
                 key={link.href}
@@ -73,8 +76,11 @@ export function Header() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label="Toggle menu"
             className={`md:hidden p-2 rounded-lg transition-colors duration-300 ${
-              isScrolled ? "text-slate-700 hover:bg-slate-100" : "text-slate-800 hover:bg-white/50"
+              isScrolled
+                ? "text-slate-700 hover:bg-slate-100"
+                : "text-slate-800 hover:bg-white/50"
             }`}
           >
             {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -84,7 +90,7 @@ export function Header() {
         {/* Mobile Navigation */}
         <div
           className={`md:hidden overflow-hidden transition-all duration-300 ${
-            isMobileMenuOpen ? "max-h-96 pb-6" : "max-h-0"
+            isMobileMenuOpen ? "max-h-screen pb-6" : "max-h-0"
           }`}
         >
           <nav className="flex flex-col gap-4 pt-4 border-t border-slate-200">
