@@ -31,7 +31,9 @@ export function Support() {
             <p className="text-slate-500 text-xs mb-4">Instant response</p>
             <Button
               className="bg-emerald-600 hover:bg-emerald-700 text-white w-full"
-              onClick={() => window.open(`https://wa.me/${phoneNumber}?text=${message}`, "_blank")}
+              onClick={() =>
+                window.open(`https://wa.me/${phoneNumber}?text=${message}`, "_blank")
+              }
             >
               Chat Now
             </Button>
@@ -48,7 +50,9 @@ export function Support() {
             <Button
               variant="outline"
               className="w-full border-blue-200 text-blue-700 hover:bg-blue-50"
-              onClick={() => window.open("tel:+233541988383")}
+              onClick={() => {
+                window.location.href = "tel:+233541988383";
+              }}
             >
               Call Now
             </Button>
@@ -65,7 +69,9 @@ export function Support() {
             <Button
               variant="outline"
               className="w-full border-cyan-200 text-cyan-700 hover:bg-cyan-50"
-              onClick={() => window.open("mailto:cybertechgh@gmail.com", "_blank")}
+              onClick={() =>
+                window.open("mailto:cybertechgh@gmail.com", "_blank")
+              }
             >
               Send Email
             </Button>

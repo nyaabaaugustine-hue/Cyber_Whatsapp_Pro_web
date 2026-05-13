@@ -110,7 +110,7 @@ export function Pricing() {
                     ? "bg-gradient-to-r from-emerald-600 to-cyan-600 hover:from-emerald-700 hover:to-cyan-700 text-white"
                     : "bg-slate-900 hover:bg-slate-800 text-white"
                 }`}
-                onClick={() => document.getElementById("instructions")?.scrollIntoView({ behavior: "smooth" })}
+                onClick={() => window.open("https://paystack.com/buy/cyber-whatsapp-pro-upvbbs", "_blank")}
               >
                 Get Started
               </Button>

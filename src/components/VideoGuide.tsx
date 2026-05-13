@@ -4,7 +4,7 @@ import { Play, Monitor, Clock } from 'lucide-react';
 export const VideoGuide: React.FC = () => {
   return (
     <section id="video" className="py-20 px-4 bg-slate-50">
-button is not mobil      <div className="max-w-5xl mx-auto">
+      <div className="max-w-5xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">Video Guides</h2>
           <p className="text-lg text-slate-600">Visual tutorials to help you master Cyber WhatsApp Pro</p>
@@ -22,8 +22,8 @@ button is not mobil      <div className="max-w-5xl mx-auto">
                 width="100%"
                 height="100%"
                 src="https://www.youtube.com/embed/g37uhggGLxU?si=1ut2zgjIgGAX3u3l"
-                title="YouTube video player"
-                frameBorder="0"
+                title="How to Install Cyber WhatsApp Pro"
+                style={{ border: 0 }}
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 referrerPolicy="strict-origin-when-cross-origin"
                 allowFullScreen
@@ -47,8 +47,9 @@ button is not mobil      <div className="max-w-5xl mx-auto">
                   allowFullScreen
                   referrerPolicy="strict-origin"
                   src="https://www.kapwing.com/e/6a032a54e6a976e69b33345b"
-                  className="absolute inset-0 w-full h-full border-0"
-                  title="Embedded content made on Kapwing"
+                  className="absolute inset-0 w-full h-full"
+                  style={{ border: 0 }}
+                  title="Cyber WhatsApp Pro Marketing Overview"
                 />
               </div>
               <p className="mt-6 text-slate-600 text-center lg:text-right">

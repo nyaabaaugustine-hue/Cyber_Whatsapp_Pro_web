@@ -61,7 +61,9 @@ export function Header() {
               </a>
             ))}
             <a
-              href="#pricing"
+              href="https://paystack.com/buy/cyber-whatsapp-pro-upvbbs"
+              target="_blank"
+              rel="noopener noreferrer"
               className="bg-gradient-to-r from-emerald-600 to-cyan-600 hover:from-emerald-700 hover:to-cyan-700 text-white px-5 py-2.5 rounded-xl text-sm font-semibold shadow-lg shadow-emerald-200 hover:shadow-xl hover:shadow-emerald-300 transition-all duration-300"
             >
               Get Started
@@ -97,7 +99,9 @@ export function Header() {
               </a>
             ))}
             <a
-              href="#pricing"
+              href="https://paystack.com/buy/cyber-whatsapp-pro-upvbbs"
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={() => setIsMobileMenuOpen(false)}
               className="bg-gradient-to-r from-emerald-600 to-cyan-600 text-white px-5 py-3 rounded-xl text-sm font-semibold text-center shadow-lg shadow-emerald-200"
             >

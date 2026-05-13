@@ -30,7 +30,6 @@ export default function Footer() {
               </li>
               <li>
                 <a href="#video" className="text-slate-400 hover:text-emerald-400 transition-colors">
-                  Video Tutorial
                   Video Guides
                 </a>
               </li>
